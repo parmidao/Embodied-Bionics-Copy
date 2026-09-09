@@ -1,0 +1,67 @@
+{
+  "schema_version": "C123-workload-schema-v0.1-candidate",
+  "guard_version": "C123-workload-leakage-guard-v0.1-candidate",
+  "status": "candidate_pending_live_logger_verification",
+  "hard_block_exact": [
+    "workload_label_nominal",
+    "workload_label_calibrated",
+    "workload_condition",
+    "workload",
+    "condition_code",
+    "condition",
+    "nback_level_current",
+    "n_level",
+    "N",
+    "workload_rating",
+    "success",
+    "wrong_grasp",
+    "drop",
+    "timeout"
+  ],
+  "hard_block_globs": [
+    "questionnaire_*",
+    "sim_tlx*",
+    "raw_nasa_tlx*",
+    "completion_time*"
+  ],
+  "group_only": [
+    "participant_id",
+    "session_id",
+    "run_id",
+    "trial_id"
+  ],
+  "conditional": {
+    "selected_N": "allow only if participant-level n* invariant within participant/session; otherwise hard-block",
+    "selected_nback_level": "covariate only if participant-level n* invariant across all blocks"
+  },
+  "allowed_covariates": [
+    "block_id",
+    "selected_nback_level",
+    "scene_luminance_mean",
+    "scheduled_order",
+    "actual_order",
+    "task_segment"
+  ],
+  "restricted_design_variables": {
+    "tau": "exclude from primary X; transfer/sensitivity analysis only"
+  },
+  "primary_feature_families": [
+    "physiology_feature_*",
+    "head_motion_feature_*",
+    "postural_stability_feature_*",
+    "pupil_feature_* only if valid eye/pupil stream and scene luminance are available"
+  ],
+  "guard_assertions": [
+    "no hard-block field in X",
+    "identifiers not in X",
+    "LOPO train/test participants disjoint",
+    "scaling fitted only on participant baseline/calibration segment",
+    "no feature timestamp later than window_end",
+    "selected_nback_level invariant if used as n* covariate",
+    "labels separate from X",
+    "condition-derived dummy variables absent from X",
+    "pupil features require scene luminance and valid eye/pupil stream",
+    "same/future-window outcomes and questionnaires absent from X",
+    "unknown workload/condition aliases fail schema mapping"
+  ]
+}

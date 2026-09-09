@@ -1,0 +1,12 @@
+*.pyc
+__pycache__/
+.DS_Store
+*.csv
+*.tsv
+*.mat
+*.h5
+*.edf
+*.log
+*.bin
+*.lic
+.env
