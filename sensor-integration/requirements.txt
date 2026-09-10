@@ -1,0 +1,6 @@
+pylsl
+bleak
+numpy
+pyxdf
+matplotlib
+pythonnet

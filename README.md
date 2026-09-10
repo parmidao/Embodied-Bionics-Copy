@@ -1,31 +1,26 @@
-# Sensor Integration & Cognitive Workload Modeling
+# Multimodal Biosignal Integration & Cognitive Workload Modeling
 
-A modular pipeline for multimodal biosignal streaming, real-time synchronization, and cognitive workload estimation for adaptive human-machine interfaces.
+## Context & Attribution
+This repository contains standalone copies of my direct engineering and research contributions developed for multimodal biosignal acquisition, hardware synchronization, and real-time workload modeling. 
 
-## Overview
-This repository contains modular implementations for:
-- **Sensor Integration**: Biosignal acquisition and streaming pipelines utilizing Lab Streaming Layer (LSL).
-- **Workload Estimation**: Feature extraction and classification architectures for real-time cognitive workload decoding.
+The modules here represent the sub-pipelines I designed and implemented as part of my undergraduate research work in adaptive human-machine systems. To adhere to research confidentiality protocols, all proprietary lab datasets, third-party vendor SDK binaries, and broader experimental suite code remain private.
 
-## Architecture
-- `sensor-integration/`: Device drivers, streaming protocols, and synchronization logic.
-- `workload/`: Processing scripts, feature engineering, and model evaluation routines.
+## Included Contributions
 
-## Requirements
+### 1. Sensor Integration (`sensor-integration/`)
+- Real-time synchronization and streaming pipelines using **Lab Streaming Layer (LSL)**.
+- Hardware interfacing and acquisition scripts for multimodal sensor streams (EMG, EEG, eye-tracking).
+- Robust stream clock synchronization and sample buffer management.
+
+### 2. Cognitive Workload Pipeline (`workload/`)
+- Feature extraction and time-series signal processing from real-time data streams.
+- Machine learning classification architectures for continuous cognitive workload decoding.
+- Pipeline evaluation, calibration routines, and performance metrics.
+
+## Environment & Dependencies
 - Python 3.9+
 - `pylsl`
 - `numpy`, `scipy`, `pandas`, `scikit-learn`
 
-## Usage
-1. Set up the virtual environment:
-   ```bash
-   python -m venv venv
-   # Windows:
-   venv\Scripts\activate
-   # macOS/Linux:
-   source venv/bin/activate
-   ```
-2. Run the integration or workload pipelines directly within their respective modules.
-
-## License & Academic Notice
-Code published for academic portfolio presentation. All proprietary research data, raw participant logs, and third-party vendor SDK binaries have been excluded.
+## Note on Confidentiality
+Raw participant data files, proprietary hardware calibration keys, and lab-internal dependencies have been removed. Code is made available here strictly for portfolio and technical presentation purposes.
